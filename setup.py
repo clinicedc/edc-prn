@@ -25,6 +25,9 @@ setup(
     long_description=README,
     zip_safe=False,
     keywords='django PRN edc',
+    install=[
+        'edc_metadata'
+    ],
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',
