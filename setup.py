@@ -26,7 +26,8 @@ setup(
     zip_safe=False,
     keywords='django PRN edc',
     install=[
-        'edc_metadata'
+        'edc-metadata',
+        'edc-metadata-rules'
     ],
     classifiers=[
         'Environment :: Web Environment',
