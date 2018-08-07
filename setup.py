@@ -25,7 +25,7 @@ setup(
     long_description=README,
     zip_safe=False,
     keywords='django PRN edc',
-    install=[
+    install_requires=[
         'edc-metadata',
         'edc-metadata-rules'
     ],
