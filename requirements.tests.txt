@@ -1,3 +1,5 @@
 edc-metadata
 edc-metadata-rules
 edc-test-utils
+edc-registration
+django-crypto-fields
