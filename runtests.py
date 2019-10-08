@@ -30,6 +30,7 @@ DEFAULT_SETTINGS = DefaultTestSettings(
         'django_crypto_fields.apps.AppConfig',
         'edc_registration.apps.AppConfig',
         'edc_metadata.apps.AppConfig',
+        'edc_sites.apps.AppConfig',
         'edc_prn.apps.AppConfig',
     ],
     add_dashboard_middleware=True,
