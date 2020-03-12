@@ -1,4 +1,4 @@
-edc_prn/tests/etc/django_crypto_fields
+django_crypto_fields
 etc/*
 venv/*
 
