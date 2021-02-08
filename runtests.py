@@ -1,16 +1,15 @@
 #!/usr/bin/env python
-import django
 import logging
 import os
 import sys
+from os.path import abspath, dirname
 
+import django
 from django.conf import settings
 from django.test.runner import DiscoverRunner
 from edc_test_utils import DefaultTestSettings
-from os.path import abspath, dirname
 
-
-app_name = 'edc_prn'
+app_name = "edc_prn"
 base_dir = dirname(abspath(__file__))
 
 DEFAULT_SETTINGS = DefaultTestSettings(
@@ -20,18 +19,18 @@ DEFAULT_SETTINGS = DefaultTestSettings(
     ETC_DIR=os.path.join(base_dir, app_name, "tests", "etc"),
     EDC_BOOTSTRAP=3,
     INSTALLED_APPS=[
-        'django.contrib.admin',
-        'django.contrib.auth',
-        'django.contrib.contenttypes',
-        'django.contrib.sessions',
-        'django.contrib.messages',
-        'django.contrib.staticfiles',
-        'django.contrib.sites',
-        'django_crypto_fields.apps.AppConfig',
-        'edc_registration.apps.AppConfig',
-        'edc_metadata.apps.AppConfig',
-        'edc_sites.apps.AppConfig',
-        'edc_prn.apps.AppConfig',
+        "django.contrib.admin",
+        "django.contrib.auth",
+        "django.contrib.contenttypes",
+        "django.contrib.sessions",
+        "django.contrib.messages",
+        "django.contrib.staticfiles",
+        "django.contrib.sites",
+        "django_crypto_fields.apps.AppConfig",
+        "edc_registration.apps.AppConfig",
+        "edc_metadata.apps.AppConfig",
+        "edc_sites.apps.AppConfig",
+        "edc_prn.apps.AppConfig",
     ],
     add_dashboard_middleware=True,
 ).settings
@@ -41,7 +40,7 @@ def main():
     if not settings.configured:
         settings.configure(**DEFAULT_SETTINGS)
     django.setup()
-    failures = DiscoverRunner(failfast=True).run_tests([f'{app_name}.tests'])
+    failures = DiscoverRunner(failfast=True).run_tests([f"{app_name}.tests"])
     sys.exit(failures)
 
 
