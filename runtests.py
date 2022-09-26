@@ -22,6 +22,7 @@ DEFAULT_SETTINGS = DefaultTestSettings(
     EDC_NAVBAR_VERIFY_ON_LOAD=IGNORE,
     EDC_AUTH_SKIP_SITE_AUTHS=True,
     EDC_AUTH_SKIP_AUTH_UPDATER=True,
+    SUBJECT_VISIT_MODEL="visit_schedule_app.subjectvisit",
     INSTALLED_APPS=[
         "django.contrib.admin",
         "django.contrib.auth",
