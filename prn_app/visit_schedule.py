@@ -3,9 +3,9 @@ from edc_visit_schedule.schedule import Schedule
 from edc_visit_schedule.visit import Crf, CrfCollection, Visit
 from edc_visit_schedule.visit_schedule import VisitSchedule
 
-from edc_prn.tests.consents import consent_v1
+from .consents import consent_v1
 
-crfs = CrfCollection(Crf(show_order=1, model="edc_prn.crf", required=True))
+crfs = CrfCollection(Crf(show_order=1, model="prn_app.crf", required=True))
 
 visit0 = Visit(
     code="1000",
@@ -49,8 +49,8 @@ visit3 = Visit(
 
 schedule = Schedule(
     name="schedule",
-    onschedule_model="visit_schedule_app.onschedule",
-    offschedule_model="visit_schedule_app.offschedule",
+    onschedule_model="prn_app.onschedule",
+    offschedule_model="prn_app.offschedule",
     appointment_model="edc_appointment.appointment",
     consent_definitions=[consent_v1],
 )
@@ -62,8 +62,8 @@ schedule.add_visit(visit3)
 
 visit_schedule = VisitSchedule(
     name="visit_schedule",
-    offstudy_model="visit_schedule_app.subjectoffstudy",
-    death_report_model="visit_schedule_app.deathreport",
+    offstudy_model="edc_offstudy.subjectoffstudy",
+    death_report_model="edc_adverse_event.deathreport",
 )
 
 visit_schedule.add_schedule(schedule)
