@@ -13,6 +13,8 @@ from edc_utils import get_utcnow
 from edc_visit_schedule.model_mixins import OffScheduleModelMixin, OnScheduleModelMixin
 from edc_visit_tracking.models import SubjectVisit
 
+from prn_app.consents import consent_v1
+
 
 class TestModel(models.Model):
     f1 = models.CharField(max_length=10, null=True)
@@ -42,6 +44,7 @@ class SubjectConsent(
 
 
 class SubjectScreening(ScreeningModelMixin, BaseUuidModel):
+    consent_definition = consent_v1
     objects = SubjectIdentifierManager()
 
 
